@@ -90,3 +90,15 @@ cc_binary(
         "@protobuf_archive//:protobuf_lite",
     ],
 )
+
+cc_binary(
+    name = "get_metrics_client_cc",
+    srcs = [
+        "get_metrics_client.cc",
+    ],
+    deps = [
+        "//tensorflow_serving/apis:model_service_proto",
+        "@grpc//:grpc++_unsecure",
+        "@org_tensorflow//tensorflow/core:framework",
+    ]
+)
